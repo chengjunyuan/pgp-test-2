@@ -28,6 +28,74 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
 
+/* Style the publication list */
+#publications-list {
+	list-style-position: inside;
+	padding-left: 0;
+}
+
+#publications-list li {
+	margin-bottom: 8px;
+}
+
+/* Style the dropdown */
+/* Basic nav layout (you may already have something similar) */
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.navbar > li {
+  float: left;
+  position: relative;
+}
+
+.navbar > li > a,
+.dropbtn {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  /* padding: 14px 20px; */
+  text-decoration: none;
+}
+
+.navbar > li > a:hover,
+/* .dropdown:hover .dropbtn {
+  background-color: #f2f2f2;
+} */
+
+/* Dropdown menu styling */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* background-color: white; */
+  min-width: 200px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+  z-index: 1;
+  right: 0;
+  top: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-weight: normal;
+}
+
+/* .dropdown-content a:hover {
+  background-color: #f1f1f1;
+} */
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 /* Style the dropdown container */
 .dropdown {
     position: relative;

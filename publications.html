@@ -22,7 +22,13 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="research.html" class="active">Research</a></li>
 						<li><a href="publications.html">Publications</a></li>
-						<li><a href="members.html">Members</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropbtn">Members</a>
+							<div class="dropdown-content">
+								<a href="pi.html">PI Curriculum Vitae</a>
+								<a href="team.html">Lab Members</a>
+							</div>
+						</li>
 						<li><a href="contact.html">Contact Us</a></li>
 					</ul>
 				</nav>
@@ -35,79 +41,40 @@
 					<section id="main" class="wrapper">
 						<div class="inner">
 							<h1 class="major">Publications</h1>
+							<span class="image fit"><img src="images/publications-banner.jpg" alt="" /></span>
 							<section id="publications" class="wrapper">
 								<div class="inner">
 									<div class="filter-buttons">
-									<button class="filter-btn active" data-year="all">All</button>
-									<button class="filter-btn" data-year="2024">2024</button>
-									<button class="filter-btn" data-year="2023">2023</button>
-									<button class="filter-btn" data-year="2022">2022</button>
-									<button class="filter-btn" data-year="2021">2021</button>
-									<button class="filter-btn" data-year="2020-and-before">2020 and before</button>
+										<button class="filter-btn active" data-year="all">Full List</button>
+										<button class="filter-btn" data-year="2024">2024</button>
+										<button class="filter-btn" data-year="2023">2023</button>
+										<button class="filter-btn" data-year="2022">2022</button>
+										<button class="filter-btn" data-year="2021">2021</button>
+										<button class="filter-btn" data-year="2020-and-before">2020 and before</button>
 									</div>
+									<hr></hr>
 									<div class="table-wrapper">
-										<table id="publications-table">
-											<thead>
-												<tr>
-													<th>Year</th>
-													<th>Title</th>
-													<th>Journal/Conference</th>
-													<th>Authors</th>
-													<th>Link</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr data-year="2023">
-													<td>2023</td>
-													<td>Article Title One: A Study on X</td>
-													<td>Journal of Research, Vol 10, Issue 2</td>
-													<td>Author A, Author B, Author C</td>
-													<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
-												</tr>
-												<tr data-year="2023">
-													<td>2023</td>
-													<td>Another Important Paper on Y</td>
-													<td>Conference Proceedings 2023</td>
-													<td>Author D, Author E</td>
-													<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
-												</tr>
-												<tr data-year="2022">
-													<td>2022</td>
-													<td>Exploring Z: A Comprehensive Review</td>
-													<td>Review Journal, Vol 5, Issue 1</td>
-													<td>Author F, Author G, Author H, Author I</td>
-													<td><a href="#">PDF</a></td>
-												</tr>
-												<tr data-year="2022">
-													<td>2022</td>
-													<td>Short Communication on New Discovery</td>
-													<td>Quick Reports, Vol 3, Issue 4</td>
-													<td>Author J</td>
-													<td><a href="#">DOI</a></td>
-												</tr>
-												<tr data-year="2021">
-													<td>2021</td>
-													<td>Foundational Work in Area A</td>
-													<td>Major Journal, Vol 15, Issue 3</td>
-													<td>Author K, Author L</td>
-													<td><a href="#">PDF</a></td>
-												</tr>
-												<tr data-year="2020">
-													<td>2020</td>
-													<td>sjgsfgd</td>
-													<td>Major Journal, Vol 15, Issue 3</td>
-													<td>Author K, Author L</td>
-													<td><a href="#">PDF</a></td>
-												</tr>
-												<tr data-year="2018">
-													<td>2018</td>
-													<td>asd</td>
-													<td>Major Journal, Vol 15, Issue 3</td>
-													<td>Author K, Author L</td>
-													<td><a href="#">PDF</a></td>
-												</tr>
-											</tbody>
-										</table>
+										<div id="publications-list-container">
+										</div>
+
+										<!-- Update publication data here -->
+										<ol id="all-publications" style="display:none;">
+											<li data-year="2023" data-selected="1">Publication Title A</li>
+											<li data-year="2023" data-selected="0">Publication Title A1</li>
+											<li data-year="2023" data-selected="1">Publication Title A2</li>
+											<li data-year="2022" data-selected="1">Dong H, Zhang Y, Wang J, Xiang H, Lv T, Wei L, Yang S, Liu X, Ren B, Zhang X, Liu L, Cao J, Wang M, Shi J#, Yang N#., “Cas9-Based Local Enrichment and Genomics Sequence Revision of Megabase-Sized Shark IgNAR Loci.”, J Immunol. 2022 Jan 1;208(1):181-189. doi: 10.4049/jimmunol.2100844., (#: co-corresponding author)B</li>
+											<li data-year="2021" data-selected="0">Wei L, Wang M, Xiang H, Jiang Y, Gong J, Su D, Al Azad MAR, Dong H, Feng L, Wu J, Chan LL, Yang N#, Shi J#, “Bamboo Shark as a Small Animal Model for Single Domain Antibody Production.”, Front Bioeng Biotechnol. 2021 Dec 8;9:792111. doi: 10.3389/fbioe.2021.792111. (#: co-corresponding author).</li>
+											<li data-year="2021" data-selected="0">Li Q, Madden JA, Lin J, Shi J, Rosen SM, Schmitz-Abe K, Agrawal PB., “Reanalysis of Exome Data Identifies Novel SLC25A46 Variants Associated with Leigh Syndrome.”, J Pers Med. 2021 Dec 2;11(12):1277. doi: 10.3390/jpm11121277.</li>
+											<li data-year="2021" data-selected="1">Wang N, Deng Z, Zhu Q, Zhao J, Xie K, Shi P, Wang Z, Chen X, Wang F, Shi J, Zhu G., “An erythrocyte-delivered photoactivatable oxaliplatin nanoprodrug for enhanced antitumor efficacy and immune response”, Chem Sci. 2021 Oct 6;12(43):14353-14362. doi: 10.1039/d1sc02941j.</li>
+											<li data-year="2021" data-selected="0">Shuo Qi, Yachao Zhang, Gongyuan Liu, Jiangbo Chen, Xiaozhen Li, Qi Zhu, Yuqi Yang, Feng Wang, Jiahai Shi, Chun-Sing Lee, Guangyu Zhu, Puxiang Lai, Lidai Wang, Chihua Fang, “Plasmonic-doped melanin-mimic for CXCR4-targeted NIR-II photoacoustic computed tomography-guided photothermal ablation of orthotopic hepatocellular carcinoma”, Acta Biomater. 2021 Jul 15;129:245-257. doi: 10.1016/j.actbio.2021.05.034.</li>
+											<li data-year="2021" data-selected="1">Linyun He, Yachao Zhang, Jiangbo Chen, Gongyuan Liu, Jingyi Zhu, Xiaozhen Li, Dengfeng Li, Yuqi Yang, Chun-Sing Lee, Jiahai Shi, Chao Yin, Puxiang Lai, Lidai Wang, Chihua Fang, “A multifunctional targeted nanoprobe with high NIR-II PAI/MRI performance for precise theranostics of orthotopic early-stage hepatocellular carcinoma”, J Mater Chem B. 2021 Nov 3;9(42):8779-8792. doi: 10.1039/d1tb01729b.</li>
+											<li data-year="2021" data-selected="0">#, Yajing Shen#, “Self-adaptive and efficient propulsion of Ray sperms at different viscosities enabled by heterogeneous dual helixes.” Proc Natl Acad Sci U S A. 2021, accepted, (#: co-corresponding author).</li>
+											<li data-year="2021" data-selected="1">Pham TC, Jayasinghe MK, Pham TT, Yang Y, Wei L, Usman WM, Chen H, Pirisinu M, Gong J, Kim S, Peng B, Wang W, Chan C, Ma V, Nguyen NTH, Kappei D, Nguyen XH, Cho WC, Shi J#, Le MTN#, “Covalent conjugation of extracellular vesicles with peptides and nanobodies for targeted therapeutic delivery.” J Extracell Vesicles. 2021 Feb;10(4):e12057. doi: 10.1002/jev2.12057. Epub 2021 Feb 16. (#: co-corresponding author).</li>
+											<li data-year="2020" data-selected="0">Publication Title D</li>
+											<li data-year="2015" data-selected="1">Publication Title E</li>
+											<li data-year="2020" data-selected="0">Publication Title D</li>
+											<li data-year="2015" data-selected="1">Publication Title E</li>
+										</ol>
 									</div>
 								</div>
 							</section>
@@ -132,41 +99,71 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script> <script>
-                $(document).ready(function() {
-                    $('.filter-btn').on('click', function() {
-                        const selectedFilter = $(this).data('year'); // Changed variable name for clarity
-						const selectedFilter2 = $(this).data('year');
+			<script src="assets/js/main.js"></script> 
+			<script>
+			$(document).ready(function () {
+				function renderPublications(filter) {
+					const $allItems = $('#all-publications li');
+					const container = $('#publications-list-container');
+					container.empty();
 
-                        // Remove active class from all buttons and add to the clicked one
-                        $('.filter-btn').removeClass('active');
-                        $(this).addClass('active');
+					if (filter === 'all') {
+						container.append('<h3>Selected Publications</h3>');
+						const itemsByYear = {};
 
-                        // Show/hide table rows based on the selected filter
-                        $('#publications-table tbody tr').each(function() {
-                            const rowYear = parseInt($(this).data('year')); // Get the year from the row as an integer
+						$allItems.each(function () {
+							const year = $(this).data('year');
+							const selected = $(this).data('selected') === 1;
+							if (!selected) return;
 
-                            if (selectedFilter === 'all') {
-                                $(this).show(); // Show all rows
-                            } else if (selectedFilter === '2020-and-before') {
-                                // Show rows where the year is 2020 or earlier
-                                if (rowYear <= 2020) {
-                                    $(this).show();
-                                } else {
-                                    $(this).hide();
-                                }
-                            } else {
-                                // For specific year buttons (e.g., "2023", "2022")
-                                if (rowYear === parseInt(selectedFilter)) {
-                                    $(this).show();
-                                } else {
-                                    $(this).hide();
-                                }
-                            }
-                        });
-                    });
-                });
-            </script>
+							if (!itemsByYear[year]) itemsByYear[year] = [];
+							itemsByYear[year].push($(this).clone());
+						});
+
+						const sortedYears = Object.keys(itemsByYear).sort((a, b) => b - a);
+						sortedYears.forEach(year => {
+							container.append(`<h4>${year}</h4>`);
+							const $ol = $('<ol></ol>');
+							itemsByYear[year].forEach($item => $ol.append($item));
+							container.append($ol);
+						});
+					} else {
+						const targetYear = filter === '2020-and-before' ? 2020 : parseInt(filter);
+						const itemsByYear = {};
+
+						$allItems.each(function () {
+							const year = $(this).data('year');
+							const shouldInclude = (filter === '2020-and-before') ? (year <= 2020) : (year === targetYear);
+							if (!shouldInclude) return;
+
+							if (!itemsByYear[year]) itemsByYear[year] = [];
+							itemsByYear[year].push($(this).clone());
+						});
+
+						const sortedYears = Object.keys(itemsByYear).sort((a, b) => b - a);
+						sortedYears.forEach(year => {
+							container.append(`<h4>${year}</h4>`);
+							const $ol = $('<ol></ol>');
+							itemsByYear[year].forEach($item => $ol.append($item));
+							container.append($ol);
+						});
+					}
+				}
+
+				$('.filter-btn').on('click', function () {
+					const selectedFilter = $(this).data('year');
+
+					$('.filter-btn').removeClass('active');
+					$(this).addClass('active');
+
+					renderPublications(selectedFilter);
+				});
+
+				// Render the "Full List" on page load
+				renderPublications('all');
+			});
+			</script>
+
 
 	</body>
 </html>

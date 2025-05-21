@@ -128,3 +128,219 @@
             </script>
 	</body>
 </html>
+
+
+
+<!---->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Shi Lab | Publications</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<header id="header">
+				<a href="index.html" class="title">Shi Lab</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="publications.html" class="active">Publications</a></li>
+						<li><a href="members.html">Members</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<div id="wrapper">
+
+				<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Publications</h1>
+
+							<div class="filter-buttons">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="main">Main Publications</button>
+                                <button class="filter-btn" data-filter="selected">Selected Works</button>
+                                <button class="filter-btn" data-filter="2023">2023</button>
+                                <button class="filter-btn" data-filter="2022">2022</button>
+                                <button class="filter-btn" data-filter="2021">2021</button>
+                                <button class="filter-btn" data-filter="2020-and-before">2020 and Before</button>
+                                </div>
+
+                            <div id="publications-list">
+                                <div id="main-publications-section" class="publication-group">
+                                    <h2 class="group-title">Main Publications</h2>
+                                    <ul class="publication-items">
+                                        <li class="publication-item" data-year="2023" data-main="true" data-selected="true">
+                                            <span>2023. Author A, Author B, Author C. "Highly Significant Article Title One: A Breakthrough in X." <i>Journal of Advanced Research</i>, Vol 10, Issue 2, pp. 123-145. <a href="#">[PDF]</a> <a href="#">[DOI]</a></span>
+                                        </li>
+                                        <li class="publication-item" data-year="2022" data-main="true">
+                                            <span>2022. Author D, Author E. "Pivotal Paper on Y." <i>Nature Scientific Reports</i>, Vol 8, pp. 678-690. <a href="#">[PDF]</a></span>
+                                        </li>
+                                        </ul>
+                                </div>
+
+                                <div id="other-publications-section" class="publication-group">
+                                    <h2 class="group-title">Other Publications</h2>
+                                    <ul class="publication-items">
+                                        <li class="publication-item" data-year="2023" data-selected="true">
+                                            <span>2023. Author F, Author G. "An Interesting Study on Z." <i>New Science Journal</i>, Vol 5, Issue 1, pp. 50-60. <a href="#">[DOI]</a></span>
+                                        </li>
+                                        <li class="publication-item" data-year="2022">
+                                            <span>2022. Author H. "Short Communication on Topic W." <i>Brief Reports</i>, Vol 3, Issue 4, pp. 10-15. <a href="#">[PDF]</a></span>
+                                        </li>
+                                        <li class="publication-item" data-year="2020" data-selected="true">
+                                            <span>2020. Author I, Author J, Author K. "Foundational Work in Area A." <i>Major Journal</i>, Vol 15, Issue 3, pp. 200-220. <a href="#">[PDF]</a></span>
+                                        </li>
+                                        <li class="publication-item" data-year="2019">
+                                            <span>2019. Author L. "Earlier Insights on Research Theme B." <i>Archived Conference Proceedings</i>, 2019, pp. 30-40. <a href="#">[PDF]</a></span>
+                                        </li>
+                                        </ul>
+                                </div>
+                            </div>
+						</div>
+					</section>
+
+			</div>
+
+		<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> <script>
+                $(document).ready(function() {
+                    const $mainPublicationsSection = $('#main-publications-section');
+                    const $otherPublicationsSection = $('#other-publications-section');
+                    const $allPublicationItems = $('.publication-item'); // All li items
+
+                    function filterPublications(filter) {
+                        // Reset all visibility
+                        $allPublicationItems.hide();
+                        $mainPublicationsSection.hide();
+                        $otherPublicationsSection.hide();
+                        $('.group-title').hide(); // Hide section titles initially
+
+                        if (filter === 'all') {
+                            // Show all and re-sort
+                            $allPublicationItems.show();
+                            $mainPublicationsSection.show();
+                            $otherPublicationsSection.show();
+                            $('.group-title').show(); // Show section titles
+
+                            // Sort 'Other Publications' by year descending
+                            const $otherItems = $otherPublicationsSection.find('.publication-item');
+                            $otherItems.sort(function(a, b) {
+                                const yearA = parseInt($(a).data('year'));
+                                const yearB = parseInt($(b).data('year'));
+                                return yearB - yearA; // Descending order
+                            }).appendTo($otherPublicationsSection.find('.publication-items'));
+
+                        } else if (filter === 'main') {
+                            // Show only main publications
+                            $allPublicationItems.filter('[data-main="true"]').show();
+                            $mainPublicationsSection.show();
+                            $mainPublicationsSection.find('.group-title').show(); // Show its title
+                        } else if (filter === 'selected') {
+                            // Show only selected publications (main or other)
+                            $allPublicationItems.filter('[data-selected="true"]').each(function() {
+                                if ($(this).data('main')) {
+                                    $mainPublicationsSection.show();
+                                    $mainPublicationsSection.find('.group-title').show();
+                                } else {
+                                    $otherPublicationsSection.show();
+                                    $otherPublicationsSection.find('.group-title').show();
+                                }
+                                $(this).show();
+                            });
+                             // Sort 'Other Publications' that are selected by year descending
+                             const $selectedOtherItems = $otherPublicationsSection.find('.publication-item[data-selected="true"]');
+                             $selectedOtherItems.sort(function(a, b) {
+                                 const yearA = parseInt($(a).data('year'));
+                                 const yearB = parseInt($(b).data('year'));
+                                 return yearB - yearA; // Descending order
+                             }).appendTo($otherPublicationsSection.find('.publication-items'));
+
+
+                        } else if (filter === '2020-and-before') {
+                            // Show publications from 2020 and before (main or other)
+                            $allPublicationItems.each(function() {
+                                const rowYear = parseInt($(this).data('year'));
+                                if (rowYear <= 2020) {
+                                    if ($(this).data('main')) {
+                                        $mainPublicationsSection.show();
+                                        $mainPublicationsSection.find('.group-title').show();
+                                    } else {
+                                        $otherPublicationsSection.show();
+                                        $otherPublicationsSection.find('.group-title').show();
+                                    }
+                                    $(this).show();
+                                }
+                            });
+                             // Sort 'Other Publications' that match by year descending
+                             const $filteredOtherItems = $otherPublicationsSection.find('.publication-item').filter(function() {
+                                 return parseInt($(this).data('year')) <= 2020;
+                             });
+                             $filteredOtherItems.sort(function(a, b) {
+                                 const yearA = parseInt($(a).data('year'));
+                                 const yearB = parseInt($(b).data('year'));
+                                 return yearB - yearA; // Descending order
+                             }).appendTo($otherPublicationsSection.find('.publication-items'));
+
+                        } else {
+                            // Filter by specific year (e.g., 2023, 2022, 2021)
+                            const targetYear = parseInt(filter);
+                            $allPublicationItems.each(function() {
+                                const rowYear = parseInt($(this).data('year'));
+                                if (rowYear === targetYear) {
+                                     if ($(this).data('main')) {
+                                        $mainPublicationsSection.show();
+                                        $mainPublicationsSection.find('.group-title').show();
+                                    } else {
+                                        $otherPublicationsSection.show();
+                                        $otherPublicationsSection.find('.group-title').show();
+                                    }
+                                    $(this).show();
+                                }
+                            });
+                             // Sort 'Other Publications' that match by year descending
+                             const $filteredOtherItems = $otherPublicationsSection.find('.publication-item').filter(function() {
+                                 return parseInt($(this).data('year')) === targetYear;
+                             });
+                             $filteredOtherItems.sort(function(a, b) {
+                                 const yearA = parseInt($(a).data('year'));
+                                 const yearB = parseInt($(b).data('year'));
+                                 return yearB - yearA; // Descending order
+                             }).appendTo($otherPublicationsSection.find('.publication-items'));
+                        }
+                    }
+
+                    // Initial load: show all publications sorted by year
+                    filterPublications('all');
+
+                    // Button click handler
+                    $('.filter-btn').on('click', function() {
+                        const filter = $(this).data('filter');
+                        $('.filter-btn').removeClass('active');
+                        $(this).addClass('active');
+                        filterPublications(filter);
+                    });
+                });
+            </script>
+	</body>
+</html>
