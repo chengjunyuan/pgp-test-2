@@ -47,24 +47,6 @@ footer, header, hgroup, menu, nav, section {
     z-index: 1000;
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* Style individual dropdown items */
-.dropdown-menu li a {
-    display: block;
-    padding: 10px 15px;
-    color: #000;
-    text-decoration: none;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f0f0f0;
-}
-
-
 body {
 	line-height: 1;
 }
@@ -3178,6 +3160,7 @@ input, select, textarea {
 	table {
 		margin: 0 0 2em 0;
 		width: 100%;
+		border-collapse: collapse;
 	}
 
 		table tbody tr {
@@ -3192,6 +3175,7 @@ input, select, textarea {
 
 		table td {
 			padding: 0.75em 0.75em;
+			vertical-align: top;
 		}
 
 		table th {
@@ -3235,6 +3219,20 @@ input, select, textarea {
 			table.alt tfoot {
 				border-top: 0;
 			}
+
+	table td:last-child {
+		text-align: left;
+	}
+
+	table a {
+		color: #49bf97; /* A green color for links, matching your theme */
+		text-decoration: none;
+		border-bottom: none; /* Remove underline from links */
+	}
+
+	table a:hover {
+		color: #379574; /* Darker green on hover */
+	}
 
 /* Wrapper */
 

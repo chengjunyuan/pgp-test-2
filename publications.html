@@ -22,6 +22,8 @@
 						<li><a href="index.html">Home</a></li>
 						<li><a href="research.html" class="active">Research</a></li>
 						<li><a href="publications.html">Publications</a></li>
+						<li><a href="members.html">Members</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -32,12 +34,83 @@
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Research</h1>
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h2>Primary Research</h2>
-							<p>The Shi Lab focuses on both basic and applied sciences of red blood cell biology. Our first aim is to investigate RBC development, which may have profound implications for treatments of anemia. Indeed, one third of the world’s population suffers from anemia with enormous health and economic consequences. Despite available pharmaceuticals, RBC transfusion is still the only way to treat severe anemic patients caused by chronic cancer, infectious diseases and genetic disorders. The increased blood demands stress the public supplies. Therefore, the lab’s goal is to determine the regulatory mechanism governing RBC development as a prerequisite to develop anti-anemia therapies.</p>
-							<h2>Secondary Research</h2>
-							<p>Our second aim is to engineer RBCs as vascular carriers for therapeutic agents. Using RBCs as drug carriers may resolve critical issues associated with drug delivery including poor solubility, poor stability, short half-life, toxicity and availability. RBCs possess many unique characteristics, including no genetic materials and long survival time (>120 days) that make them attractive candidates for vascular delivery of therapeutic cargoes. Our goal is to engineer RBCs as cell-based carriers for therapeutic agents. This technology opens a new avenue for vascular drug delivery, which could potentially be useful for the diagnosis and treatment of many diseases.</p>
+							<h1 class="major">Publications</h1>
+							<section id="publications" class="wrapper">
+								<div class="inner">
+									<div class="filter-buttons">
+									<button class="filter-btn active" data-year="all">All</button>
+									<button class="filter-btn" data-year="2024">2024</button>
+									<button class="filter-btn" data-year="2023">2023</button>
+									<button class="filter-btn" data-year="2022">2022</button>
+									<button class="filter-btn" data-year="2021">2021</button>
+									<button class="filter-btn" data-year="2020-and-before">2020 and before</button>
+									</div>
+									<div class="table-wrapper">
+										<table id="publications-table">
+											<thead>
+												<tr>
+													<th>Year</th>
+													<th>Title</th>
+													<th>Journal/Conference</th>
+													<th>Authors</th>
+													<th>Link</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr data-year="2023">
+													<td>2023</td>
+													<td>Article Title One: A Study on X</td>
+													<td>Journal of Research, Vol 10, Issue 2</td>
+													<td>Author A, Author B, Author C</td>
+													<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
+												</tr>
+												<tr data-year="2023">
+													<td>2023</td>
+													<td>Another Important Paper on Y</td>
+													<td>Conference Proceedings 2023</td>
+													<td>Author D, Author E</td>
+													<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
+												</tr>
+												<tr data-year="2022">
+													<td>2022</td>
+													<td>Exploring Z: A Comprehensive Review</td>
+													<td>Review Journal, Vol 5, Issue 1</td>
+													<td>Author F, Author G, Author H, Author I</td>
+													<td><a href="#">PDF</a></td>
+												</tr>
+												<tr data-year="2022">
+													<td>2022</td>
+													<td>Short Communication on New Discovery</td>
+													<td>Quick Reports, Vol 3, Issue 4</td>
+													<td>Author J</td>
+													<td><a href="#">DOI</a></td>
+												</tr>
+												<tr data-year="2021">
+													<td>2021</td>
+													<td>Foundational Work in Area A</td>
+													<td>Major Journal, Vol 15, Issue 3</td>
+													<td>Author K, Author L</td>
+													<td><a href="#">PDF</a></td>
+												</tr>
+												<tr data-year="2020">
+													<td>2020</td>
+													<td>sjgsfgd</td>
+													<td>Major Journal, Vol 15, Issue 3</td>
+													<td>Author K, Author L</td>
+													<td><a href="#">PDF</a></td>
+												</tr>
+												<tr data-year="2018">
+													<td>2018</td>
+													<td>asd</td>
+													<td>Major Journal, Vol 15, Issue 3</td>
+													<td>Author K, Author L</td>
+													<td><a href="#">PDF</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</section>
 						</div>
 					</section>
 
@@ -59,7 +132,41 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="assets/js/main.js"></script> <script>
+                $(document).ready(function() {
+                    $('.filter-btn').on('click', function() {
+                        const selectedFilter = $(this).data('year'); // Changed variable name for clarity
+						const selectedFilter2 = $(this).data('year');
+
+                        // Remove active class from all buttons and add to the clicked one
+                        $('.filter-btn').removeClass('active');
+                        $(this).addClass('active');
+
+                        // Show/hide table rows based on the selected filter
+                        $('#publications-table tbody tr').each(function() {
+                            const rowYear = parseInt($(this).data('year')); // Get the year from the row as an integer
+
+                            if (selectedFilter === 'all') {
+                                $(this).show(); // Show all rows
+                            } else if (selectedFilter === '2020-and-before') {
+                                // Show rows where the year is 2020 or earlier
+                                if (rowYear <= 2020) {
+                                    $(this).show();
+                                } else {
+                                    $(this).hide();
+                                }
+                            } else {
+                                // For specific year buttons (e.g., "2023", "2022")
+                                if (rowYear === parseInt(selectedFilter)) {
+                                    $(this).show();
+                                } else {
+                                    $(this).hide();
+                                }
+                            }
+                        });
+                    });
+                });
+            </script>
 
 	</body>
 </html>

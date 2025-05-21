@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Shi Lab | Publications</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<header id="header">
+				<a href="index.html" class="title">Shi Lab</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="research.html">Research</a></li>
+						<li><a href="publications.html" class="active">Publications</a></li>
+						<li><a href="members.html">Members</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<div id="wrapper">
+
+				<section id="main" class="wrapper">
+						<div class="inner">
+							<h1 class="major">Publications</h1>
+
+							<div class="filter-buttons">
+                                <button class="filter-btn active" data-year="all">All</button>
+                                <button class="filter-btn" data-year="2023">2023</button>
+                                <button class="filter-btn" data-year="2022">2022</button>
+                                <button class="filter-btn" data-year="2021">2021</button>
+                                </div>
+
+							<div class="table-wrapper">
+								<table id="publications-table">
+									<thead>
+										<tr>
+											<th>Year</th>
+											<th>Title</th>
+											<th>Journal/Conference</th>
+											<th>Authors</th>
+											<th>Link</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr data-year="2023">
+											<td>2023</td>
+											<td>Article Title One: A Study on X</td>
+											<td>Journal of Research, Vol 10, Issue 2</td>
+											<td>Author A, Author B, Author C</td>
+											<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
+										</tr>
+										<tr data-year="2023">
+											<td>2023</td>
+											<td>Another Important Paper on Y</td>
+											<td>Conference Proceedings 2023</td>
+											<td>Author D, Author E</td>
+											<td><a href="#">PDF</a> | <a href="#">DOI</a></td>
+										</tr>
+										<tr data-year="2022">
+											<td>2022</td>
+											<td>Exploring Z: A Comprehensive Review</td>
+											<td>Review Journal, Vol 5, Issue 1</td>
+											<td>Author F, Author G, Author H, Author I</td>
+											<td><a href="#">PDF</a></td>
+										</tr>
+										<tr data-year="2022">
+											<td>2022</td>
+											<td>Short Communication on New Discovery</td>
+											<td>Quick Reports, Vol 3, Issue 4</td>
+											<td>Author J</td>
+											<td><a href="#">DOI</a></td>
+										</tr>
+										<tr data-year="2021">
+											<td>2021</td>
+											<td>Foundational Work in Area A</td>
+											<td>Major Journal, Vol 15, Issue 3</td>
+											<td>Author K, Author L</td>
+											<td><a href="#">PDF</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</section>
+
+			</div>
+
+		<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script> <script>
+                // Add this JavaScript code here or in a separate custom.js file
+                // and link it in your HTML like the other scripts.
+                $(document).ready(function() {
+                    $('.filter-btn').on('click', function() {
+                        const year = $(this).data('year');
+
+                        // Remove active class from all buttons and add to the clicked one
+                        $('.filter-btn').removeClass('active');
+                        $(this).addClass('active');
+
+                        // Show/hide table rows based on the selected year
+                        $('#publications-table tbody tr').each(function() {
+                            if (year === 'all' || $(this).data('year') == year) {
+                                $(this).show();
+                            } else {
+                                $(this).hide();
+                            }
+                        });
+                    });
+                });
+            </script>
+	</body>
+</html>
