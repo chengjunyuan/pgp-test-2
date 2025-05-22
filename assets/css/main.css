@@ -38,6 +38,88 @@ footer, header, hgroup, menu, nav, section {
 	margin-bottom: 8px;
 }
 
+/* Style the PI page */
+.cv-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 50px;
+  padding-top: 2rem;
+}
+
+.left-column {
+  flex: 1;
+  max-width: 300px;
+}
+
+.right-column {
+  flex: 2;
+  min-width: 300px;
+}
+
+.profile-image {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.left-column h2 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.links a {
+  color: #2e5cb8;
+  text-decoration: none;
+}
+
+.right-column h3 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.25rem;
+  margin-top: 1.5rem;
+}
+
+ul.experience, ul.education {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+ul li {
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+ul li strong {
+  display: inline-block;
+  width: 150px;
+}
+
+.advisors {
+  font-style: italic;
+  color: #555;
+  font-size: 0.95em;
+}
+
+
+.experience-entry {
+  display: flex;
+  margin-bottom: 1.2rem;
+}
+
+.exp-year {
+  width: 150px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.exp-role {
+  flex-grow: 1;
+  line-height: 1.5;
+}
+
+
 /* Style the dropdown */
 /* Basic nav layout (you may already have something similar) */
 .navbar {
