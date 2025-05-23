@@ -153,7 +153,7 @@ ul li strong {
 .dropdown-content {
   display: none;
   position: absolute;
-  /* background-color: white; */
+  background-color: #674ab0;
   min-width: 200px;
   box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
   z-index: 1;
@@ -196,6 +196,8 @@ ul li strong {
     border: 1px solid #ccc;
     z-index: 1000;
 }
+
+/*-----------------------------------*/
 
 body {
 	line-height: 1;
